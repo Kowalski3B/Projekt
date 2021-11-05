@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sklep internetowy</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <nav class="menu">
+    <img src="images/rdust.png" class="logo" />
+    <a class="menusmall">bluzy</a>
+    <a class="menusmall">koszule</a>
+    <a class="menusmall">spodnie</a>
+    <a class="menusmall">buty</a>
+  </nav>
+  <main>
+    <div class="produkt">
+      <img src="images/bluza1.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but1" value="1kox">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza2.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but2">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza3.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but3">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza4.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but4">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza5.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but5">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza6.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but6">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza7.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but7">dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza8.jpg" alt="" />
+      <a>199zł</a>
+      <button id="but8">dodaj do koszyka</button>
+    </div>
+    <!-- <div class="produkt">
+      <img src="images/bluza1.jpg" alt="" />
+      <a>199zł</a>
+      <button>dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza5.jpg" alt="" />
+      <a>199zł</a>
+      <button>dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza3.jpg" alt="" />
+      <a>199zł</a>
+      <button>dodaj do koszyka</button>
+    </div>
+    <div class="produkt">
+      <img src="images/bluza6.jpg" alt="" />
+      <a>199zł</a>
+      <button>dodaj do koszyka</button> -->
+  </main>
+  <div id="alert">dodano do koszyka</div>
+  <button class="koszyk" id="start">Przejdz do koszyka</button>
+
+  <div id="kosz">
+    <input type="button" id="zamknij" value="zamknij" />
+    <div class="srodekkoszyka">
+      <a>Koszyk</a>
+      <div id="prodk1">
+        <img src="images/bluza1.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us1">X</button>
+        <input type="number" id="war1" hidden value="199" />
+      </div>
+      <div id="prodk2">
+        <img src="images/bluza2.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us2">X</button>
+        <input type="number" id="war2" hidden value="199" />
+      </div>
+      <div id="prodk3">
+        <img src="images/bluza3.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us3">X</button>
+        <input type="number" id="war3" hidden value="199" />
+      </div>
+      <div id="prodk4">
+        <img src="images/bluza4.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us4">X</button>
+        <input type="number" id="war4" hidden value="199" />
+      </div>
+      <div id="prodk5">
+        <img src="images/bluza5.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us5">X</button>
+        <input type="number" id="war5" hidden value="199" />
+      </div>
+      <div id="prodk6">
+        <img src="images/bluza6.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us6">X</button>
+        <input type="number" id="war6" hidden value="199" />
+      </div>
+      <div id="prodk7">
+        <img src="images/bluza7.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us7">X</button>
+        <input type="number" id="war7" hidden value="199" />
+      </div>
+      <div id="prodk8">
+        <img src="images/bluza8.jpg" width="175px" height="175px" />
+        <a>199zł</a>
+        <button id="us8">X</button>
+        <input type="number" id="war8" hidden value="199" />
+      </div>
+    </div>
+    <div id="suma"></div>
+    <input type="button" id="clear" value="wyczysc koszyk" />
+    <input type="button" id="next" value="przejdz dalej" onclick="location.href='formularz.html';" />
+  </div>
+  <footer>Sebastian Kowalski 2021 &copy;</footer>
+</body>
+<script>
+  myStorage = window.sessionStorage;
+  let w1 = 0;
+  let w2 = 0;
+  let w3 = 0;
+  let w4 = 0;
+  let w5 = 0;
+  let w6 = 0;
+  let w7 = 0;
+  let w8 = 0;
+  //alert
+  function alertkosz() {
+    document.getElementById("alert").style.display = "flex";
+    setTimeout(alertoff, 2900);
+  }
+
+  function alertoff() {
+    document.getElementById("alert").style.display = "none";
+  }
+  //produkt1
+  function prod1() {
+    document.getElementById("prodk1").style.display = "flex";
+    alertkosz();
+    w1 = document.getElementById("war1").value;
+    w1 = 1 * w1;
+    sessionStorage.setItem('produkt1', 1);
+  }
+  document.getElementById("but1").onclick = prod1;
+
+  //usun produkt1
+  function usunpr1() {
+    document.getElementById("prodk1").style.display = "none";
+    w1 = 0;
+    sessionStorage.removeItem('produkt1');
+  }
+  document.getElementById("us1").onclick = usunpr1;
+  document.getElementById("us1").addEventListener("click", sumowanie, false);
+
+  //produkt2
+  function prod2() {
+    document.getElementById("prodk2").style.display = "flex";
+    alertkosz();
+    w2 = document.getElementById("war2").value;
+    w2 = 1 * w2;
+    sessionStorage.setItem('produkt2', 1);
+  }
+  document.getElementById("but2").onclick = prod2;
+
+  //usun produkt2
+  function usunpr2() {
+    document.getElementById("prodk2").style.display = "none";
+    w2 = 0;
+    sessionStorage.removeItem('produkt2');
+  }
+  document.getElementById("us2").onclick = usunpr2;
+  document.getElementById("us2").addEventListener("click", sumowanie, false);
+
+  //produkt3
+  function prod3() {
+    document.getElementById("prodk3").style.display = "flex";
+    alertkosz();
+    w3 = document.getElementById("war3").value;
+    w3 = 1 * w3;
+    sessionStorage.setItem('produkt3', 1);
+  }
+  document.getElementById("but3").onclick = prod3;
+
+  //usun produkt3
+  function usunpr3() {
+    document.getElementById("prodk3").style.display = "none";
+    w3 = 0;
+    sessionStorage.removeItem('produkt3');
+  }
+  document.getElementById("us3").onclick = usunpr3;
+  document.getElementById("us3").addEventListener("click", sumowanie, false);
+
+  //produkt4
+  function prod4() {
+    document.getElementById("prodk4").style.display = "flex";
+    alertkosz();
+    w4 = document.getElementById("war4").value;
+    w4 = 1 * w4;
+    sessionStorage.setItem('produkt4', 1);
+  }
+  document.getElementById("but4").onclick = prod4;
+
+  //usun produkt4
+  function usunpr4() {
+    document.getElementById("prodk4").style.display = "none";
+    w4 = 0;
+    sessionStorage.removeItem('produkt4');
+  }
+  document.getElementById("us4").onclick = usunpr4;
+  document.getElementById("us4").addEventListener("click", sumowanie, false);
+
+  //produkt5
+  function prod5() {
+    document.getElementById("prodk5").style.display = "flex";
+    alertkosz();
+    w5 = document.getElementById("war5").value;
+    w5 = 1 * w5;
+    sessionStorage.setItem('produkt5', 1);
+  }
+  document.getElementById("but5").onclick = prod5;
+
+  //usun produkt5
+  function usunpr5() {
+    document.getElementById("prodk5").style.display = "none";
+    w5 = 0;
+    sessionStorage.removeItem('produkt5');
+  }
+  document.getElementById("us5").onclick = usunpr5;
+  document.getElementById("us5").addEventListener("click", sumowanie, false);
+
+  //produkt6
+  function prod6() {
+    document.getElementById("prodk6").style.display = "flex";
+    alertkosz();
+    w6 = document.getElementById("war6").value;
+    w6 = 1 * w6;
+    sessionStorage.setItem('produkt6', 1);
+  }
+  document.getElementById("but6").onclick = prod6;
+
+  //usun produkt6
+  function usunpr6() {
+    document.getElementById("prodk6").style.display = "none";
+    w6 = 0;
+    sessionStorage.removeItem('produkt6');
+  }
+  document.getElementById("us6").onclick = usunpr6;
+  document.getElementById("us6").addEventListener("click", sumowanie, false);
+
+  //produkt7
+  function prod7() {
+    document.getElementById("prodk7").style.display = "flex";
+    alertkosz();
+    w7 = document.getElementById("war7").value;
+    w7 = 1 * w7;
+    sessionStorage.setItem('produkt7', 1);
+  }
+  document.getElementById("but7").onclick = prod7;
+
+  //usun produkt7
+  function usunpr7() {
+    document.getElementById("prodk7").style.display = "none";
+    w7 = 0;
+    sessionStorage.removeItem('produkt7');
+  }
+  document.getElementById("us7").onclick = usunpr7;
+  document.getElementById("us7").addEventListener("click", sumowanie, false);
+
+  //produkt8
+  function prod8() {
+    document.getElementById("prodk8").style.display = "flex";
+    alertkosz();
+    w8 = document.getElementById("war8").value;
+    w8 = 1 * w8;
+    sessionStorage.setItem('produkt8', 1);
+  }
+  document.getElementById("but8").onclick = prod8;
+
+  //usun produkt8
+  function usunpr8() {
+    document.getElementById("prodk8").style.display = "none";
+    w8 = 0;
+    sessionStorage.removeItem('produkt8');
+  }
+  document.getElementById("us8").onclick = usunpr8;
+  document.getElementById("us8").addEventListener("click", sumowanie, false);
+
+  //koszyk
+  function on() {
+    document.getElementById("kosz").style.display = "flex";
+  }
+
+  function off() {
+    document.getElementById("kosz").style.display = "none";
+  }
+  document.getElementById("start").addEventListener("click", on, false);
+  document.getElementById("zamknij").addEventListener("click", off, false);
+
+  //sumowanie koszyka
+  function sumowanie() {
+    let wynik = w1 + w2 + w3 + w4 + w5 + w6 + w7 + w8;
+    document.getElementById("suma").innerHTML = wynik + "zł";
+  }
+  document
+    .getElementById("start")
+    .addEventListener("click", sumowanie, false);
+
+  //czyszczenie koszyka
+  function clear() {
+    document.getElementById("prodk1").style.display = "none";
+    document.getElementById("prodk2").style.display = "none";
+    document.getElementById("prodk3").style.display = "none";
+    document.getElementById("prodk4").style.display = "none";
+    document.getElementById("prodk5").style.display = "none";
+    document.getElementById("prodk6").style.display = "none";
+    document.getElementById("prodk7").style.display = "none";
+    document.getElementById("prodk8").style.display = "none";
+    document.getElementById("suma").innerHTML = "0zł";
+    w1 = 0;
+    w2 = 0;
+    w3 = 0;
+    w4 = 0;
+    w5 = 0;
+    w6 = 0;
+    w7 = 0;
+    w8 = 0;
+    sessionStorage.removeItem('produkt1');
+    sessionStorage.removeItem('produkt2');
+    sessionStorage.removeItem('produkt3');
+    sessionStorage.removeItem('produkt4');
+    sessionStorage.removeItem('produkt5');
+    sessionStorage.removeItem('produkt6');
+    sessionStorage.removeItem('produkt7');
+    sessionStorage.removeItem('produkt8');
+  }
+  document.getElementById("clear").onclick = clear;
+</script>
+
+</html>

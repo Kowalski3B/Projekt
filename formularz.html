@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formularz</title>
+    <link rel="stylesheet" href="style/formularz.css" />
+</head>
+
+<body>
+    <nav class="menu">
+        <img src="images/rdust.png" class="logo" onclick="location.href='index.html';" />
+        <a class="menusmall">bluzy</a>
+        <a class="menusmall">koszule</a>
+        <a class="menusmall">spodnie</a>
+        <a class="menusmall">buty</a>
+    </nav>
+    <div id="suma" class="suma"></div>
+    <main>
+        <div id="prodk1">
+            <img src="images/bluza1.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us1">X</button>
+            <input type="number" id="war1" hidden value="199" />
+        </div>
+        <div id="prodk2">
+            <img src="images/bluza2.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us2">X</button>
+            <input type="number" id="war2" hidden value="199" />
+        </div>
+        <div id="prodk3">
+            <img src="images/bluza3.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us3">X</button>
+            <input type="number" id="war3" hidden value="199" />
+        </div>
+        <div id="prodk4">
+            <img src="images/bluza4.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us4">X</button>
+            <input type="number" id="war4" hidden value="199" />
+        </div>
+        <div id="prodk5">
+            <img src="images/bluza5.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us5">X</button>
+            <input type="number" id="war5" hidden value="199" />
+        </div>
+        <div id="prodk6">
+            <img src="images/bluza6.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us6">X</button>
+            <input type="number" id="war6" hidden value="199" />
+        </div>
+        <div id="prodk7">
+            <img src="images/bluza7.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us7">X</button>
+            <input type="number" id="war7" hidden value="199" />
+        </div>
+        <div id="prodk8">
+            <img src="images/bluza8.jpg" width="175px" height="175px" />
+            <a>199zł</a>
+            <button id="us8">X</button>
+            <input type="number" id="war8" hidden value="199" />
+        </div>
+    </main>
+    <aside>
+        <form action="#">
+            <label>imie</label>
+            <input type="text" id="imie">
+            <label>nazwisko</label>
+            <input type="text" id="nazwisko">
+            <label>telefon</label>
+            <input type="tel" max="9" id="tel">
+            <label>kod pocztowy</label>
+            <input type="text" id="kodp">
+            <label>miasto</label>
+            <input type="text" id="miasto">
+            <label>ulica</label>
+            <input type="text" id="ulica">
+            <label>nr domu</label>
+            <input type="text" id="dom">
+            <label>nr mieszkania</label>
+            <input type="text" id="mieszkanie">
+            <input type="submit" value="zloz zamowienie" id="send">
+        </form>
+        <div id="alert">zamowienie zostalo zlozone</div>
+    </aside>
+    <script src="FileSaver.js">
+        import {
+            saveAs
+        } from "FileSaver.js";
+    </script>
+    <script type="text/javascript">
+        //pobieranie z poprzedniej strony
+        myStorage = window.sessionStorage;
+
+        let pr1 = sessionStorage.getItem('produkt1') * 1;
+        let pr2 = sessionStorage.getItem('produkt2') * 1;
+        let pr3 = sessionStorage.getItem('produkt3') * 1;
+        let pr4 = sessionStorage.getItem('produkt4') * 1;
+        let pr5 = sessionStorage.getItem('produkt5') * 1;
+        let pr6 = sessionStorage.getItem('produkt6') * 1;
+        let pr7 = sessionStorage.getItem('produkt7') * 1;
+        let pr8 = sessionStorage.getItem('produkt8') * 1;
+
+        let sumakoszyka = 0;
+        //wyswietlanie wybranych
+        if (pr1 == 1) {
+            document.getElementById("prodk1").style.display = "flex";
+            sumakoszyka += document.getElementById("war1").value * 1;
+        }
+        if (pr2 == 1) {
+            document.getElementById("prodk2").style.display = "flex";
+            sumakoszyka += document.getElementById("war2").value * 1;
+        }
+        if (pr3 == 1) {
+            document.getElementById("prodk3").style.display = "flex";
+            sumakoszyka += document.getElementById("war3").value * 1;
+        }
+        if (pr4 == 1) {
+            document.getElementById("prodk4").style.display = "flex";
+            sumakoszyka += document.getElementById("war4").value * 1;
+        }
+        if (pr5 == 1) {
+            document.getElementById("prodk5").style.display = "flex";
+            sumakoszyka += document.getElementById("war5").value * 1;
+        }
+        if (pr6 == 1) {
+            document.getElementById("prodk6").style.display = "flex";
+            sumakoszyka += document.getElementById("war6").value * 1;
+        }
+
+        if (pr7 == 1) {
+            document.getElementById("prodk7").style.display = "flex";
+            sumakoszyka += document.getElementById("war7").value * 1;
+        }
+        if (pr8 == 1) {
+            document.getElementById("prodk8").style.display = "flex";
+            sumakoszyka += document.getElementById("war8").value * 1;
+        }
+
+        function sumakoszykakox() {
+            document.getElementById("suma").innerHTML = sumakoszyka + "zł";
+        }
+        sumakoszykakox()
+
+        //usun 1
+        function usunpr1() {
+            document.getElementById("prodk1").style.display = "none";
+            sessionStorage.removeItem('produkt1');
+            sumakoszyka -= document.getElementById("war1").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us1").onclick = usunpr1;
+
+        //usun 2
+        function usunpr2() {
+            document.getElementById("prodk2").style.display = "none";
+            sessionStorage.removeItem('produkt2');
+            sumakoszyka -= document.getElementById("war2").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us2").onclick = usunpr2;
+
+        //usun 3
+        function usunpr3() {
+            document.getElementById("prodk3").style.display = "none";
+            sessionStorage.removeItem('produkt3');
+            sumakoszyka -= document.getElementById("war3").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us3").onclick = usunpr3;
+
+        //usun 4
+        function usunpr4() {
+            document.getElementById("prodk4").style.display = "none";
+            sessionStorage.removeItem('produkt4');
+            sumakoszyka -= document.getElementById("war4").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us4").onclick = usunpr4;
+
+        //usun 5
+        function usunpr5() {
+            document.getElementById("prodk5").style.display = "none";
+            sessionStorage.removeItem('produkt5');
+            sumakoszyka -= document.getElementById("war5").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us5").onclick = usunpr5;
+
+        //usun 6
+        function usunpr6() {
+            document.getElementById("prodk6").style.display = "none";
+            sessionStorage.removeItem('produkt6');
+            sumakoszyka -= document.getElementById("war6").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us6").onclick = usunpr6;
+
+        //usun 7
+        function usunpr7() {
+            document.getElementById("prodk7").style.display = "none";
+            sessionStorage.removeItem('produkt7');
+            sumakoszyka -= document.getElementById("war7").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us7").onclick = usunpr7;
+
+        //usun 8
+        function usunpr8() {
+            document.getElementById("prodk8").style.display = "none";
+            sessionStorage.removeItem('produkt8');
+            sumakoszyka -= document.getElementById("war8").value * 1;
+            sumakoszykakox()
+        }
+        document.getElementById("us8").onclick = usunpr8;
+
+        // do pliku
+        function dopliku() {
+            let wynik = "";
+            if (pr1 == 1) {
+                wynik += "produkt1\n"
+            }
+            if (pr2 == 1) {
+                wynik += "produkt2\n"
+            }
+            if (pr3 == 1) {
+                wynik += "produkt3\n"
+            }
+            if (pr4 == 1) {
+                wynik += "produkt4\n"
+            }
+            if (pr5 == 1) {
+                wynik += "produkt5\n"
+            }
+            if (pr6 == 1) {
+                wynik += "produkt6\n"
+            }
+            if (pr7 == 1) {
+                wynik += "produkt7\n"
+            }
+            if (pr8 == 1) {
+                wynik += "produkt8\n"
+            }
+            f1 = document.getElementById("imie").value
+            f2 = document.getElementById("nazwisko").value
+            f3 = document.getElementById("tel").value
+            f4 = document.getElementById("kodp").value
+            f5 = document.getElementById("miasto").value
+            f6 = document.getElementById("ulica").value
+            f7 = document.getElementById("dom").value
+            f8 = document.getElementById("mieszkanie").value
+
+            wynik +=
+                `${f1}\n${f2}\n${f3}\n${f4}\n${f5}\n${f6}\n${f7}\n${f8}`
+
+            var file = new File([wynik], "zamowienie.txt", {
+                type: "text/plain;charset=utf-8"
+            });
+            saveAs(file);
+        }
+        document.getElementById("send").onclick = dopliku;
+
+        //powrot
+        function wroc() {
+            window.location.replace("index.html");
+        }
+
+        //zerowanie
+        function exit(e) {
+            e.preventDefault();
+            sessionStorage.removeItem('produkt1');
+            sessionStorage.removeItem('produkt2');
+            sessionStorage.removeItem('produkt3');
+            sessionStorage.removeItem('produkt4');
+            sessionStorage.removeItem('produkt5');
+            sessionStorage.removeItem('produkt6');
+            sessionStorage.removeItem('produkt7');
+            sessionStorage.removeItem('produkt8');
+
+            document.getElementById("prodk1").style.display = "none";
+            document.getElementById("prodk2").style.display = "none";
+            document.getElementById("prodk3").style.display = "none";
+            document.getElementById("prodk4").style.display = "none";
+            document.getElementById("prodk5").style.display = "none";
+            document.getElementById("prodk6").style.display = "none";
+            document.getElementById("prodk7").style.display = "none";
+            document.getElementById("prodk8").style.display = "none";
+
+            document.getElementById("alert").style.display = "flex";
+
+            setInterval(wroc, 1500);
+        }
+
+        document.getElementById("send").addEventListener("click", exit, false);
+    </script>
+</body>
+
+</html>

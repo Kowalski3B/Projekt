@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+    scrollbar-color: #637371 #4f5559;
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: #d9ccc5;
+}
+
+.menu {
+    width: 100%;
+    height: 90px;
+    background-color: #bfb2aa;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logo {
+    display: flex;
+    margin-top: 2px;
+    width: 85px;
+    height: 85px;
+}
+
+.menusmall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 78%;
+    margin-left: 60px;
+    background-color: #a69286;
+    border-radius: 10px;
+    margin-top: 8px;
+    box-shadow: 5px 5px #637371;
+    color: white;
+}
+
+main {
+    width: 40%;
+}
+
+main>div {
+    display: none;
+    width: 330px;
+    height: 200px;
+    background-color: #a69286;
+    border-radius: 10px;
+    font-size: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px #637371;
+}
+
+main>div>img {
+    display: flex;
+    margin-top: 4%;
+    margin-right: 5%;
+    border-radius: 6px;
+}
+
+main>div>a {
+    display: flex;
+    margin-top: 75px;
+    margin-right: 5%;
+    color: white;
+}
+
+main>div>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #637371;
+    color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-right: 6%;
+    box-shadow: 5px 5px #637371;
+}
+
+.suma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #a69286;
+    box-shadow: 5px 5px #637371;
+    position: absolute;
+    top: 10.5%;
+    left: 37%;
+}
+
+aside {
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    top: 11.5%;
+    right: -8%;
+}
+
+form {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form>label {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+form>input {
+    height: 35px;
+    width: 70%;
+    border-radius: 6px;
+    background-color: #a69286;
+    color: white;
+    font-size: 20px;
+}
+
+#send {
+    margin-top: 15px;
+    height: 50px;
+}
+
+#alert {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+    height: 175px;
+    border-radius: 6px;
+    background-color: #a69286;
+    position: fixed;
+    bottom: 40%;
+    right: 40%;
+    border: 1px solid white;
+    font-size: 25px;
+    color: white;
+}
+
+#alert>a {
+    font-size: 15px;
+}
