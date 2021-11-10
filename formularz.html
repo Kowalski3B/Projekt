@@ -11,7 +11,7 @@
 
 <body>
     <nav class="menu">
-        <img src="images/rdust.png" class="logo" onclick="location.href='index.html';" id="logo" />
+        <img src="images/rdust.png" class="logo" id="logo" />
         <a class="menusmall">bluzy</a>
         <a class="menusmall">koszule</a>
         <a class="menusmall">spodnie</a>
@@ -298,7 +298,8 @@
             setInterval(wroc, 1500);
         }
 
-        function logoexit() {
+        function logoexit(e) {
+            e.preventDefault();
             sessionStorage.removeItem('produkt1');
             sessionStorage.removeItem('produkt2');
             sessionStorage.removeItem('produkt3');
@@ -316,6 +317,8 @@
             document.getElementById("prodk6").style.display = "none";
             document.getElementById("prodk7").style.display = "none";
             document.getElementById("prodk8").style.display = "none";
+
+            wroc();
         }
 
         document.getElementById("send").addEventListener("click", exit, false);
