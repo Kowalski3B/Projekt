@@ -11,7 +11,7 @@
 
 <body>
     <nav class="menu">
-        <img src="images/rdust.png" class="logo" onclick="location.href='index.html';" />
+        <img src="images/rdust.png" class="logo" onclick="location.href='index.html';" id="logo" />
         <a class="menusmall">bluzy</a>
         <a class="menusmall">koszule</a>
         <a class="menusmall">spodnie</a>
@@ -298,7 +298,29 @@
             setInterval(wroc, 1500);
         }
 
+        function logoexit() {
+            sessionStorage.removeItem('produkt1');
+            sessionStorage.removeItem('produkt2');
+            sessionStorage.removeItem('produkt3');
+            sessionStorage.removeItem('produkt4');
+            sessionStorage.removeItem('produkt5');
+            sessionStorage.removeItem('produkt6');
+            sessionStorage.removeItem('produkt7');
+            sessionStorage.removeItem('produkt8');
+
+            document.getElementById("prodk1").style.display = "none";
+            document.getElementById("prodk2").style.display = "none";
+            document.getElementById("prodk3").style.display = "none";
+            document.getElementById("prodk4").style.display = "none";
+            document.getElementById("prodk5").style.display = "none";
+            document.getElementById("prodk6").style.display = "none";
+            document.getElementById("prodk7").style.display = "none";
+            document.getElementById("prodk8").style.display = "none";
+        }
+
         document.getElementById("send").addEventListener("click", exit, false);
+
+        document.getElementById("logo").addEventListener("click", logoexit, false);
     </script>
 </body>
 
